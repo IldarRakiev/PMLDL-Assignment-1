@@ -1,0 +1,25 @@
+version: '3.8'
+services:
+  api:
+    build:
+      context: ./api
+    container_name: california_gb_api
+    ports:
+      - "8000:8000"
+    volumes:
+      - ../../models:/models:ro
+    environment:
+      - PYTHONUNBUFFERED=1
+    restart: unless-stopped
+
+  app:
+    build:
+      context: ./app
+    container_name: california_gb_app
+    ports:
+      - "8501:8501"
+    environment:
+      - STREAMLIT_SERVER_ENABLECORS=false
+    depends_on:
+      - api
+    restart: unless-stopped
