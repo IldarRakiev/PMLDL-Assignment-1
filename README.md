@@ -30,14 +30,14 @@ The task is to deploy a machine learning model via an API and create a web appli
 │   │   ├── api/              # FastAPI service
 │   │   │   ├── api.py
 │   │   │   └── Dockerfile
-│   │   └── app/              # Streamlit web app
-│   │       ├── app.py
-│   │       └── Dockerfile
+│   │   ├── app/              # Streamlit web app
+│   │   │   ├── app.py
+│   │   │   └── Dockerfile
+|   |   └── docker-compose.yml
 │   └── models/
-│       └── train\_model.py    # training script
-├── data/                     # (placeholder for datasets if needed)
-├── models/                   # trained model saved here (california\_gb.joblib)
-└── docker-compose.yml
+│       └── train_model.py    # training script
+|                  
+└── models/                   # trained model saved here (california_gb.joblib)
 
 ````
 
